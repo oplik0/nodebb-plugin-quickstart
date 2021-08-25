@@ -22,12 +22,12 @@ plugin.addRoutes = async ({ router, middleware, helpers }) => {
 	});
 };
 
-plugin.addAdminNavigation = function (header, callback) {
+plugin.addAdminNavigation = (header) => {
 	header.plugins.push({
 		route: '/plugins/quickstart',
 		icon: 'fa-tint',
 		name: 'Quickstart',
 	});
 
-	callback(null, header);
+	return header;
 };
