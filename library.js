@@ -17,8 +17,8 @@ plugin.init = async (params) => {
 plugin.addRoutes = async ({ router, middleware, helpers }) => {
 	const middlewares = [
 		middleware.authenticateRequest,
-		middleware.ensureLoggedIn,
-	]
+		// middleware.ensureLoggedIn,		// use this if you want only registered users to call this route
+	];
 	router.get('/quickstart/:param1', middlewares, (req, res) => {
 		helpers.formatApiResponse(200, res, {
 			foobar: req.params.param1,
